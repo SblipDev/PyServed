@@ -1,5 +1,5 @@
 # PyServed v2.0.1
-Made by Shaurya Pratap Singh 
+Made with love by Shaurya Pratap Singh 
 
 ## Installation
 
