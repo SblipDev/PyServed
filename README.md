@@ -1,6 +1,7 @@
-# PyServed v2.0.1
-Made with love by Shaurya Pratap Singh 
+# PyServed v2.0.2
+A beautiful cli made with python which can send files with blazing speed.
 
+![pyserved in show](images/example.png)
 ## Installation
 
 Using pip(for stable releases.) ->
@@ -18,23 +19,37 @@ $ python3 setup.py install
 
 ## Usage
 
-Once installed, you can send files across computers. 
+Once installed, you will be able to send files across computers with the package and python on it. 
+If there is any problem you can file and issue on this repo.
 
-To send files.
-It will ask the file path.
+### To listen for files
 
-```
-$ sndfile
-```
-
-To get files.
+To send files, you will have to run the following command (The correct output is also shown): 
 
 ```
-$ getfile
+$ pdlisten
+
+[SERVER]: Server is listening on 192.168.1.5:8080
+[SERVER]: Waiting for a connection for files...
 ```
 
-Thats it. 
-Feel free to contribute. 
+To change the default port(8080), add the '-port XXXX' argument to the command and try again.
+If someone else conects using the pyserved 'pdsnd' command. It will write the file to the current working directory
+
+### To get files.
+
+To send files, you will have to run the `pdsnd` command. It will prompt for the filepath of the file you want to send.
+If everything goes right, the file will be sent to the person listening in the same network.
+To change the default port(8080), add the '-port XXXX' argument to the command and try again.
+
+```
+$ pdsnd
+
+[SERVER] : Program Initialized at current directory './'
+[SERVER] : Filename: 
+```
+
+
+## Thats it. 
+Feel free to contribute to the package. I personally would really appreciate it.
 Have a nice day   
-
-

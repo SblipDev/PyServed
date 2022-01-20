@@ -3,9 +3,6 @@ ________________________________
 |                              |
 | pyserved                     |
 |                              |
-| Only works with utf-8        |
-| files. (for now.)            |
-|                              |
 | By:                          |
 | Shaurya Pratap Singh         |
 | 2021 ©                       |
@@ -20,14 +17,16 @@ Client that sends the file (uploads)
 
 
 import socket
-import tqdm
 import os
-import argparse
+# import argparse
 import readline
 import sys
 
-SEPARATOR = "<Order66>"
-BUFFER_SIZE = 1024 * 100000  # 4KB
+from rich import print
+from rich.prompt import Prompt
+
+SEPARATOR = "<[(^_^)]>"
+BUFFER_SIZE = 1024 * 100000  
 
 
 def send_file(filename, host, port):
@@ -78,12 +77,18 @@ DISCONNECT_MESSAGE = "!q"
 FORMAT = 'utf-8'
 
 try:
-    print("[INFO] : Program Initialized at current directory.")
-    filename = input('[FILEPATH] : ')
+    print("[bold green][SERVER][/] : Program Initialized at current directory '{}'".format(SAVE_DIR))
+    filename = Prompt.ask("[bold green][SERVER][/] : Filename")
     send_file(filename, SERVER, PORT)
-    print("[INFO] : Got file path successfully.")
-    print(f"[INFO] : Sending {filename} to {SERVER}:{PORT}")
-    print(f"[INFO] : Sent file. :)")
+    print("[bold green][SERVER][/] : Got file path successfully.")
+    print(f"[bold green][SERVER[/] : Sending [bold yellow]{filename}[/] to {SERVER}:{PORT}")
+    print(f"[bold green][SERVER][/] : Sent file. :)")
 except KeyboardInterrupt:
-    print("\n[QUIT] : Keyboard Interrupt.")
+    print("\n[bold red]KeyboardInterrupt[/]")
+    exit()
+except ConnectionRefusedError:
+    print(f"\n[bold red]Connection Refused. Please check the server program.[/]")
+    exit()
+except FileNotFoundError:
+    print(f"\n[bold red]File '{filename}' does not exist. Please correct the file path and try again[/]")
     exit()

@@ -17,15 +17,15 @@ import socket
 import readline
 import os
 
+from rich import print
+
 HEADER = 64
-
-
 class Client:
     def __init__(self, server, port):
         self.SERVER_HOST = server
         self.SERVER_PORT = port
         self.BUFFER_SIZE = 1024 * 100000
-        self.SEPARATOR = "<Order66>"
+        self.SEPARATOR = "<[(^_^)]>"
         self.s = socket.socket()
         self.s.bind((self.SERVER_HOST, self.SERVER_PORT))
 
@@ -78,6 +78,10 @@ SERVER = get_internal_ip()
 PORT = 8080
 ADDR = (SERVER, PORT)
 
+def is_port_in_use() -> bool:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex((get_internal_ip(), PORT)) == 0
+
 try:
     if sys.argv[1] is None:
         pass
@@ -90,19 +94,31 @@ try:
 except IndexError:
     pass
 
+if is_port_in_use() is True:
+    print("[bold red]Port 8080 is already in use in your network. Choose another port instead using the '-port' parameter.[/]")
+    exit()
+
 try:
     client = Client(SERVER, PORT)
-    print("[SERVER]: Server is running on {}:{}".format(SERVER, PORT))
-    print("[SERVER]: Waiting for a connection...")
+    print("[bold green][SERVER]:[/] Server is listening on {}:{}".format(SERVER, PORT))
+    print("[bold green][SERVER]:[/] Waiting for a connection for files...")
     client.listen()
     _, address = client.accept()
-    print("[SERVER] : Connection at {}:{}".format(address[0], address[1]))
-    print("[SERVER] : Waiting for a file...")
-    client.receive()
-    print("[SERVER] : Received file {}.".format(client.filename))
+    print("[bold green][SERVER]:[/] Connection from {}:{} accepted.".format(address[0], address[1]))
+    print("[bold green][SERVER]:[/] Reading file data.....")
+    try:
+        client.receive()
+    except ValueError:
+        print("\n[bold red]An error occured. Please try again in few seconds....[/]")
+        exit()
+    print("[bold green][SERVER]:[/] Received file '[bold yellow]{}[/]', saving to current directory.".format(client.filename))
     client.write()
-    print("[SERVER]: File transferred successfully. Closing connection...")
+    print("[bold green][SERVER]:[/] File transferred successfully. Closing connection...")
     client.close()
 except KeyboardInterrupt:
-    print("\n[SERVER]: Keyboard interrupt.")
-    client.close()
+    print("\n[bold red]KeyboardInterrupt[/]")
+    exit()
+except:
+    print("\n[bold red]Something went wrong. If the problem presists, contact the owner of the package at https://github.com/SblipDev/pyserved[/]")
+    exit()
+    
