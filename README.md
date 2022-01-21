@@ -1,4 +1,4 @@
-# PyServed v2.0.2
+# PyServed v2.0.3
 A beautiful cli made with python which can send files with blazing speed.
 
 ![pyserved in show](images/example.png)
