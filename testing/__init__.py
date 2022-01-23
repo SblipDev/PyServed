@@ -8,6 +8,9 @@ MAJOR UPDATE
 2.0 -> Bought back cli and added support for ALL codec files. 
 2.0.1 -> Fixed bug with codecs.
 
+test
+test
+
 Shaurya Pratap Singh 2021
 """
 
