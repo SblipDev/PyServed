@@ -19,6 +19,9 @@ import os
 
 from rich import print
 
+def keymaker(key: str) -> str:
+    return key.replace('.', '@').replace(':','+')
+
 HEADER = 64
 class Client:
     def __init__(self, server, port):
@@ -40,7 +43,7 @@ class Client:
         received = self.client_socket.recv(self.BUFFER_SIZE).decode()
         filename, filesize = received.split(self.SEPARATOR)
         self.filename = os.path.basename(filename)
-        self.filesize = int(filesize)
+        self.filesize = filesize
         return self.filename, self.filesize
 
     def write(self):
@@ -101,6 +104,7 @@ if is_port_in_use() is True:
 try:
     client = Client(SERVER, PORT)
     print("[bold green][SERVER]:[/] Server is listening on {}:{}".format(SERVER, PORT))
+    print("[bold green][SERVER]:[/] Connection Key: {}".format(keymaker(str(SERVER+":"+str(PORT)))))
     print("[bold green][SERVER]:[/] Waiting for a connection for files...")
     client.listen()
     _, address = client.accept()
@@ -108,8 +112,8 @@ try:
     print("[bold green][SERVER]:[/] Reading file data.....")
     try:
         client.receive()
-    except ValueError:
-        print("\n[bold red]An error occured. Please try again in few seconds....[/]")
+    except ValueError as e:
+        print(f"{repr(e)} \n\n [bold red]An error occured. Please try again in few seconds....[/]")
         exit()
     print("[bold green][SERVER]:[/] Received file '[bold yellow]{}[/]', saving to current directory.".format(client.filename))
     client.write()
@@ -118,7 +122,7 @@ try:
 except KeyboardInterrupt:
     print("\n[bold red]KeyboardInterrupt[/]")
     exit()
-except:
-    print("\n[bold red]Something went wrong. If the problem presists, contact the owner of the package at https://github.com/SblipDev/pyserved[/]")
+except Exception as e:
+    print(f"\n[bold red] {repr(e)} \n\n If the problem presists, contact the owner of the package at https://github.com/SblipDev/pyserved[/] \n")
     exit()
     
