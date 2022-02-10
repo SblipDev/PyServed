@@ -76,9 +76,14 @@ except IndexError:
 DISCONNECT_MESSAGE = "!q"
 FORMAT = 'utf-8'
 
+keybreaker = lambda key: key.replace('@','.').replace('+', ':').strip(':')
+
 try:
     print("[bold green][SERVER][/] : Program Initialized at current directory '{}'".format(SAVE_DIR))
+    connectionkey = Prompt.ask("[bold green][SERVER][/] : Enter Connection Key ")
+    print("[bold green][SERVER][/] : Set server ip to {}".format(keybreaker(connectionkey)))
     filename = Prompt.ask("[bold green][SERVER][/] : Filename")
+    SERVER, PORT = tuple(keybreaker(connectionkey).split(':'))
     send_file(filename, SERVER, PORT)
     print("[bold green][SERVER][/] : Got file path successfully.")
     print(f"[bold green][SERVER[/] : Sending [bold yellow]{filename}[/] to {SERVER}:{PORT}")
