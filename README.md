@@ -1,4 +1,4 @@
-# PyServed v2.0.3
+# PyServed v2.0.4
 A beautiful cli made with python which can send files with blazing speed.
 
 ![pyserved in show](images/example.png)
@@ -33,8 +33,8 @@ $ pdlisten
 [SERVER]: Waiting for a connection for files...
 ```
 
-To change the default port(8080), add the '-port XXXX' argument to the command and try again.
-If someone else conects using the pyserved 'pdsnd' command. It will write the file to the current working directory
+To change the default port(8080), add the '-port XXXX' argument to the command and try again. 
+If someone else conects using the pyserved 'pdsnd' command, enter the connection key which is showed. It will write the file to the current working directory
 
 ### To get files.
 
@@ -46,6 +46,7 @@ To change the default port(8080), add the '-port XXXX' argument to the command a
 $ pdsnd
 
 [SERVER] : Program Initialized at current directory './'
+[SERVER] : Connection Key:
 [SERVER] : Filename: 
 ```
 
