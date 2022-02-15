@@ -1,0 +1,13 @@
+[package]
+name = "pyserved"
+version = "0.0.0"
+description = ""
+repo = "*required*"
+keywords = []
+
+[modules-ignore]
+
+[modules]
+rich = "*"
+socket = "*"
+readline = "*"
