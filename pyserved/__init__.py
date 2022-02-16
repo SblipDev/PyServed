@@ -12,6 +12,6 @@ MAJOR UPDATE
 Shaurya Pratap Singh 2021
 """
 
-__version__ = '2.0.3'
+__version__ = '2.0.5'
 __author__ = 'Shaurya Pratap Singh'
 __message__ = "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking. -Steve Jobs"
