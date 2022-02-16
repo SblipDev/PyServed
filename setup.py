@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="pyserved",
-    version="2.0.4",
+    version="2.0.5",
     description="Share files with your friends (on the same network though). Project setup by Choam by Kian Mckenna.",
     long_description_content_type="text/markdown",
     url="https://github.com/SblipDev/pyserved/",
