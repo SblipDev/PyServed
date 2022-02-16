@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name="pyserved",
     version="2.0.4",
-    description="Share files with your friends (on the same network though)",
+    description="Share files with your friends (on the same network though). Project setup by Choam by Kian Mckenna.",
     long_description_content_type="text/markdown",
     url="https://github.com/SblipDev/pyserved/",
     author="Shaurya Pratap Singh",
@@ -13,5 +13,5 @@ setup(
     packages=["pyserved"],
     install_requires=['netifaces', 'rich'],
     include_package_data=True,
-    scripts=['bin/pdlisten', 'bin/pdsnd'],
+    scripts=['pyserved/bin/pdlisten', 'pyserved/bin/pdsnd'],
 )
