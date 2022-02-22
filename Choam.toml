@@ -1,9 +1,9 @@
 [package]
 name = "pyserved"
 version = "2.0.5"
-description = ""
-repo = "*required*"
-keywords = []
+description = "Client for sending files <= 100mb using sockets and Pythonn."
+repo = "https://github.com/SlibDev/pyserved"
+keywords = ["sockets"]
 
 [modules-ignore]
 
@@ -11,3 +11,12 @@ keywords = []
 rich = "*"
 socket = "*"
 readline = "*"
+
+[modules-dev]
+
+# Format project files
+# $ choam run format
+[script.format]
+requires = ["black"]
+perspective = "${PROJECT}"
+command = "${PYTHON} -m black ."
