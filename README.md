@@ -6,7 +6,8 @@
 
 A beautiful cli made with python which can send files with blazing speed. Initialized and setup using `Choam` by [Kian McKenna](https://github.com/cowboycodr)
 
-![pyserved in show](images/example.png)
+<!-- ![pyserved in show](images/example.png) -->
+![pyserved in show](images/pyserved.png)
 ## Installation
 
 Using pip(for stable releases.) ->
