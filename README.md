@@ -1,3 +1,5 @@
+<div align="center"><img src="images/pyserved.png" align="center"></div>
+
 # PyServed v2.0.5
 <a href="https://pepy.tech/project/pyserved"><img src="https://img.shields.io/pypi/dw/pyserved"></a>
 <a href="https://pypi.org/project/pyserved"><img src="https://img.shields.io/pypi/v/pyserved"></a>
@@ -7,7 +9,7 @@
 A beautiful cli made with python which can send files with blazing speed. Initialized and setup using `Choam` by [Kian McKenna](https://github.com/cowboycodr)
 
 <!-- ![pyserved in show](images/example.png) -->
-![pyserved in show](images/pyserved.png)
+     
 ## Installation
 
 Using pip(for stable releases.) ->
