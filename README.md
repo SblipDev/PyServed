@@ -38,6 +38,7 @@ To send files, you will have to run the following command (The correct output is
 $ pdlisten
 
 [SERVER]: Server is listening on 192.168.1.5:8080
+[SERVER]: Connection Key: 192@168@1@58+8080
 [SERVER]: Waiting for a connection for files...
 ```
 
@@ -54,10 +55,9 @@ To change the default port(8080), add the '-port XXXX' argument to the command a
 $ pdsnd
 
 [SERVER] : Program Initialized at current directory './'
-[SERVER] : Connection Key:
-[SERVER] : Filename: 
+[SERVER] : Connection Key: {Connection Key from pdlisten program}
+[SERVER] : Filename: {Path of file which you want to transfer.}
 ```
-
 
 ## Thats it. 
 Feel free to contribute to the package. I personally would really appreciate it.
