@@ -6,7 +6,7 @@
 <a href="https://github.com/SblipDev/pyserved"><img alt="LOC" src="https://shields.io/tokei/lines/github/SblipDev/pyserved"></a>
 <a href="https://github.com/SblipDev/pyserved"><img src="https://img.shields.io/github/repo-size/SblipDev/pyserved"></a>
 
-A beautiful cli made with python which can send files with blazing speed. Initialized and setup using `Choam` by [Kian McKenna](https://github.com/cowboycodr)
+A beautiful cli made with python which can send files with blazing speed.
 
 <!-- ![pyserved in show](images/example.png) -->
      
@@ -60,5 +60,31 @@ $ pdsnd
 ```
 
 ## Thats it. 
-Feel free to contribute to the package. I personally would really appreciate it.
 Have a nice day   
+
+## LICENSE
+
+```
+MIT License
+
+Copyright (c) 2021 SblipDev.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
