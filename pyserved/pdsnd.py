@@ -10,12 +10,6 @@ ________________________________
 """
 
 
-# import base64
-"""
-Client that sends the file (uploads)
-"""
-
-
 import socket
 import os
 # import argparse
@@ -79,11 +73,14 @@ FORMAT = 'utf-8'
 keybreaker = lambda key: key.replace('@','.').replace('+', ':').strip(':')
 
 try:
-    print("[bold green][SERVER][/] : Program Initialized at current directory '{}'".format(SAVE_DIR))
+    print("[bold green][SERVER][/] : Program Initialized at directory '{}'".format(SAVE_DIR))
     connectionkey = Prompt.ask("[bold green][SERVER][/] : Enter Connection Key ")
+    try:
+        SERVER, PORT = tuple(keybreaker(connectionkey).split(':'))
+    except ValueError:
+        print(f"\n[bold red]Invalid Connection key {connectionkey}. Please check if your connection key is valid.[/]")
     print("[bold green][SERVER][/] : Set server ip to {}".format(keybreaker(connectionkey)))
     filename = Prompt.ask("[bold green][SERVER][/] : Filename")
-    SERVER, PORT = tuple(keybreaker(connectionkey).split(':'))
     send_file(filename, SERVER, PORT)
     print("[bold green][SERVER][/] : Got file path successfully.")
     print(f"[bold green][SERVER[/] : Sending [bold yellow]{filename}[/] to {SERVER}:{PORT}")

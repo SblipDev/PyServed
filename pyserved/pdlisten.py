@@ -118,6 +118,6 @@ except KeyboardInterrupt:
     print("\n[bold red]KeyboardInterrupt[/]")
     exit()
 except Exception as e:
-    print(f"\n[bold red] {repr(e)} \n\n If the problem presists, contact the owner of the package at https://github.com/SblipDev/pyserved[/] \n")
+    print(f"\n[bold red] {repr(e)} \n\n If the problem persists, contact the owner of the package at https://github.com/SblipDev/pyserved[/] \n")
     exit()
     
