@@ -1,15 +1,10 @@
 """
-________________________________
-|                              |
-| pyserved                     |
-|                              |
-| Only works with utf-8        | 
-| files. (for now.)            |
-|                              | 
-| By:                          |
-| Shaurya Pratap Singh         |
-| 2021 ©                       |
-|______________________________|
+File:pdlisten.py
+
+Q.  Does what?
+A.  This program is used to listen for incoming connections from the 
+    pdsnd.py program. If it recieves a connection, it will write the
+    file in the directory. 
 """
 
 import sys
