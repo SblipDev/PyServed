@@ -79,6 +79,7 @@ try:
         SERVER, PORT = tuple(keybreaker(connectionkey).split(':'))
     except ValueError:
         print(f"\n[bold red]Invalid Connection key {connectionkey}. Please check if your connection key is valid.[/]")
+        exit()
     print("[bold green][SERVER][/] : Set server ip to {}".format(keybreaker(connectionkey)))
     filename = Prompt.ask("[bold green][SERVER][/] : Filename")
     send_file(filename, SERVER, PORT)
@@ -94,3 +95,4 @@ except ConnectionRefusedError:
 except FileNotFoundError:
     print(f"\n[bold red]File '{filename}' does not exist. Please correct the file path and try again[/]")
     exit()
+
