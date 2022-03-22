@@ -6,28 +6,29 @@
 <a href="https://github.com/SblipDev/pyserved"><img alt="LOC" src="https://shields.io/tokei/lines/github/SblipDev/pyserved"></a>
 <a href="https://github.com/SblipDev/pyserved"><img src="https://img.shields.io/github/repo-size/SblipDev/pyserved"></a>
 
-A beautiful cli made with python which can send files with blazing speed.
+A beautiful cli with network transfer/hosting utilities to make life easier.<br>
+Check Releases in git repository for new features and bugfixes v2.0.6 has added. 
 
-<!-- ![pyserved in show](images/example.png) -->
-     
 ## Installation
 
-Using pip(for stable releases.) ->
+Using pip (recommended) ->
 
 ```
 $ pip install pyserved
 ```
 
-Using Git (for latest updates) ->
+Using Git and SETUP.py install (for latest updates) ->
 
 ```
 $ git clone https://github.com/SblipDev/pyserved.git
+$ cd pyserved
 $ python3 setup.py install
 ```
 
 ## Usage
 
-Once installed, you will be able to send files across computers with the package and python on it. 
+Once installed, you will be able to send files across computers with the package and python on it OR
+you can host a folder on network so anyone on network may download its contents.
 If there is any problem you can file and issue on this repo.
 
 ### To listen for files
@@ -57,6 +58,20 @@ $ pdsnd
 [SERVER] : Program Initialized at current directory './'
 [SERVER] : Connection Key: {Connection Key from pdlisten program}
 [SERVER] : Filename: {Path of file which you want to transfer.}
+```
+
+### To host folder.
+
+To host a folder, you have to use the `pdhost` command. You can use the `-port` command so you may change the default port `6789`.
+PS. Don't use in production environments! It only has basic security features!
+
+```
+$ pdhost -port 7070
+
+[SERVER]: started at 192.168.1.58:7070
+192.168.1.58 - - [22/Mar/2022 20:15:54] "GET / HTTP/1.1" 200 -
+192.168.1.58 - - [22/Mar/2022 20:15:55] code 404, message File not found
+192.168.1.58 - - [22/Mar/2022 20:15:55] "GET /favicon.ico HTTP/1.1" 404 -
 ```
 
 ## Thats it. 
