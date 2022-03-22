@@ -13,6 +13,8 @@ Check Releases in git repository for new features and bugfixes v2.0.6 has added.
 
 #### Using pip (recommended) ->
 
+![Pip Installation](images/installationwithpip.gif)
+
 ```
 $ pip install pyserved
 ```
@@ -20,6 +22,8 @@ $ pip install pyserved
 Pypi Link -> https://pypi.org/project/pyserved/
 
 #### Using Git and SETUP.py install (for latest updates) ->
+
+![Source Installation](images/installationwithgit.gif)
 
 ```
 $ git clone https://github.com/SblipDev/pyserved.git
