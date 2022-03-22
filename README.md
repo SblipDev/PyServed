@@ -35,6 +35,8 @@ If there is any problem you can file and issue on this repo.
 
 ### To listen for files
 
+<br><img src="images/pdlisten.png" align="center"><br>
+
 To send files, you will have to run the following command (The correct output is also shown): 
 
 ```
@@ -50,6 +52,8 @@ If someone else conects using the pyserved 'pdsnd' command, enter the connection
 
 ### To get files.
 
+<br><img src="images/pdsnd.png" align="center"><br>
+
 To send files, you will have to run the `pdsnd` command. It will prompt for the filepath of the file you want to send.
 If everything goes right, the file will be sent to the person listening in the same network.
 To change the default port(8080), add the '-port XXXX' argument to the command and try again.
@@ -63,6 +67,8 @@ $ pdsnd
 ```
 
 ### To host folder.
+
+<br><img src="images/pdhost.png" align="center"><br>
 
 To host a folder, you have to use the `pdhost` command. You can use the `-port` command so you may change the default port `6789`.
 PS. Don't use in production environments! It only has basic security features!
