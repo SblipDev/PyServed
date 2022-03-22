@@ -84,7 +84,7 @@ try:
     filename = Prompt.ask("[bold green][SERVER][/] : Filename")
     send_file(filename, SERVER, PORT)
     print("[bold green][SERVER][/] : Got file path successfully.")
-    print(f"[bold green][SERVER[/] : Sending [bold yellow]{filename}[/] to {SERVER}:{PORT}")
+    print(f"[bold green][SERVER][/] : Sending [bold yellow]{filename}[/] to {SERVER}:{PORT}")
     print(f"[bold green][SERVER][/] : Sent file. :)")
 except KeyboardInterrupt:
     print("\n[bold red]KeyboardInterrupt[/]")
