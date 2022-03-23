@@ -1,4 +1,4 @@
-<div align="center"><img src="images/PyServed.png" align="center"></div>
+<div align="center"><img src="images/PyServed-min.png" align="center"></div>
 
 # PyServed v2.0.6
 <a href="https://pepy.tech/project/pyserved"><img src="https://img.shields.io/pypi/dw/pyserved"></a>
