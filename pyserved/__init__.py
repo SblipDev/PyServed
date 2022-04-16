@@ -11,8 +11,8 @@ _____        _____                         _
 Shaurya Pratap Singh 2021
 """
 
-__version__ = '2.0.5'
-__author__ = 'SblipDev'
+__version__ = "2.0.8"
+__author__ = "SblipDev"
 __github__ = "https://github.com/SblipDev/PyServed"
 __logo__ = """
 _____        _____                         _ 
@@ -33,7 +33,8 @@ def main():
     print("Github: {0}".format(__github__))
     print("")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
 else:
     pass

@@ -1,3 +1,26 @@
 #!/usr/bin/env python
 
+"""
+deepthought@42 ~ $ pdlisten
+
+[SERVER]: Server is listening on 192.168.1.58:8080
+[SERVER]: Connection Key: 192@168@1@58+8080
+[SERVER]: Waiting for a connection for files...
+
+The pdlisten command included with PyServed Utilities is used
+for hosting a PyServed file transfer server on your network.
+
+The pdsnd command is used for sending a file to the server
+created by the server.
+
+### PDLISTEN ###
+
+The pdlisten command when run gives a connection key which 
+is needed to send a file while using pdsnd.
+
+The -port argument may be used to change the port of the server.
+
+Thanks for having interest in this library.
+"""
+
 import pyserved.pdlisten

@@ -1,3 +1,18 @@
 #!/usr/bin/env python
 
+"""
+deepthought@42 ~ $ pdhost
+
+[SERVER]: started at 192.168.1.58:6789
+192.168.1.58 - - [14/Apr/2022 20:05:28] "GET / HTTP/1.1" 200 -
+
+The pdhost command included with PyServed Utilities is used
+for hosting a folder on your network. The folder you host will be
+accessible to anyone who has access to the network. You may change
+the port by using the -port argument. The default port is 6789.
+You will have to share the url shared at the fist line of the output.
+
+Thanks for having interest in this library.
+"""
+
 import pyserved.pdhost
