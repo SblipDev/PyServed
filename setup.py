@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="pyserved",
-    version="2.0.6",
+    version="2.0.8",
     description="Network transfer/hosting utilities by SblipDev.",
     long_description_content_type="text/markdown",
     long_description=long_description,
@@ -15,7 +15,7 @@ setup(
     author_email="shaurya.p.singh21@gmail.com",
     license="MIT",
     packages=["pyserved"],
-    install_requires=['netifaces', 'rich'],
+    install_requires=["rich"],
     include_package_data=True,
-    scripts=['pyserved/bin/pdlisten', 'pyserved/bin/pdsnd', 'pyserved/bin/pdhost'],
+    scripts=["pyserved/bin/pdlisten", "pyserved/bin/pdsnd", "pyserved/bin/pdhost"],
 )
