@@ -1,13 +1,12 @@
 <div align="center"><img src="images/PyServed-min.png" align="center"></div>
 
-# PyServed v2.0.6
+# PyServed v2.0.8
 <a href="https://pepy.tech/project/pyserved"><img src="https://img.shields.io/pypi/dw/pyserved"></a>
 <a href="https://pypi.org/project/pyserved"><img src="https://img.shields.io/pypi/v/pyserved"></a>
 <a href="https://github.com/SblipDev/pyserved"><img alt="LOC" src="https://shields.io/tokei/lines/github/SblipDev/pyserved"></a>
 <!-- <a href="https://github.com/SblipDev/pyserved"><img src="https://img.shields.io/github/repo-size/SblipDev/pyserved"></a> -->
 
 A beautiful cli with network transfer/hosting utilities to make life easier.<br>
-Check Releases in git repository for new features and bugfixes v2.0.6 has added. 
 
 ## Installation
 
@@ -114,4 +113,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
