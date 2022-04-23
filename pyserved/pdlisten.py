@@ -12,7 +12,7 @@ pdsnd.py program. If it recieves a connection, it will write the
 file in the directory. 
 
 The pdsnd command is used for sending a file to the server
-created by the server.
+created by the server "pdlisten" program.
 
 ### PDLISTEN ###
 
