@@ -1,7 +1,7 @@
 <div align="center"><img src="images/PyServed-min.png" align="center"></div>
 
 # PyServed v2.0.8
-<a href="https://pepy.tech/project/pyserved"><img src="https://img.shields.io/pypi/dw/pyserved"></a>
+[![Downloads](https://static.pepy.tech/personalized-badge/pyserved?period=total&units=none&left_color=black&right_color=red&left_text=Downloads)](https://pepy.tech/project/pyserved)</a>
 <a href="https://pypi.org/project/pyserved"><img src="https://img.shields.io/pypi/v/pyserved"></a>
 <a href="https://github.com/SblipDev/pyserved"><img alt="LOC" src="https://shields.io/tokei/lines/github/SblipDev/pyserved"></a>
 <!-- <a href="https://github.com/SblipDev/pyserved"><img src="https://img.shields.io/github/repo-size/SblipDev/pyserved"></a> -->
