@@ -1,0 +1,35 @@
+[package]
+name = "pyserved"
+version = "2.1"
+description = "Network transfer/hosting utilities by SblipDev."
+
+[modules]
+rich = "*"
+twine = "*"
+wheel = "*"
+choam = "*"
+
+[modules-dev]
+black = "*"
+pyserved = "*"
+choam = "*"
+
+[script.format]
+requires = [ "black",]
+perspective = "${PROJECT}"
+command = "${PYTHON} -m black ."
+
+[script.listen]
+requires = [ "pyserved",]
+perspective = "${CWD}"
+command = "${PYTHON} pyserved/pdlisten.py"
+
+[script.sendf]
+requires = [ "pyserved",]
+perspective = "${CWD}"
+command = "${PYTHON} pyserved/pdsnd.py"
+
+[script.hostf]
+requires = [ "pyserved",]
+perspective = "${CWD}"
+command = "${PYTHON} pyserved/pdhost.py"
