@@ -68,4 +68,3 @@ except OSError:
     print(
         "\n[bold red]OSError: [Error 98] Address already in use.If not, please try again in a few seconds. If error message persists, please use the -port argument to set a new port.[/]"
     )
-
