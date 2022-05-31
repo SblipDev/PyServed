@@ -1,6 +1,6 @@
 <div align="center"><img src="images/PyServed-min.png" align="center"></div>
 
-# PyServed v2.0.8
+# PyServed v2.1
 [![Downloads](https://static.pepy.tech/personalized-badge/pyserved?period=total&units=none&left_color=black&right_color=red&left_text=Downloads)](https://pepy.tech/project/pyserved)</a>
 <a href="https://pypi.org/project/pyserved"><img src="https://img.shields.io/pypi/v/pyserved"></a>
 <a href="https://github.com/SblipDev/pyserved"><img alt="LOC" src="https://shields.io/tokei/lines/github/SblipDev/pyserved"></a>
@@ -113,3 +113,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+#### This project was constructed with [Choam](https://github.com/cowboycodr/choam) by [cowboycodr](https://github.com/cowboycodr/)
