@@ -1,10 +1,10 @@
 """
 deepthought@42 ~ $ pdlisten
 
-[SERVER] : Program Initialized at directory './'
-[SERVER] : Enter Connection Key : 192@168@1@58+8080
-[SERVER] : Set server ip to 192.168.1.58:8080
-[SERVER] : Filename: file.txt
+[{constants.success}] : Program Initialized at directory './'
+[{constants.success}] : Enter Connection Key : 192@168@1@58+8080
+[{constants.success}] : Set server ip to 192.168.1.58:8080
+[{constants.success}] : Filename: file.txt
 
 This program is used to listen for incoming connections from the 
 pdsnd.py program. If it recieves a connection, it will write the
@@ -30,6 +30,7 @@ import socket
 import os
 import readline
 import sys
+import constants
 
 from rich import print
 from rich.prompt import Prompt
@@ -38,6 +39,17 @@ from rich.prompt import Prompt
 
 SEPARATOR = "<py42/>"
 BUFFER_SIZE = 1024 * 100000
+
+# Function for validating connection key and
+
+def validate_key(key):
+    # Correct key = 192@168@3@92+8080
+    
+    key_ca = key.split('@')
+    if len(key_ca) == 4 and "+" in key_ca[3]:
+        return True
+    else:
+        return False
 
 # Function for sending file
 
@@ -109,51 +121,57 @@ keybreaker = lambda key: key.replace("@", ".").replace("+", ":").strip(":")
 
 try:
     print(
-        "[bold green][SERVER][/] : Program Initialized at directory '{}'".format(
-            SAVE_DIR
-        )
+        f"[bold green][{constants.success}][/] : Program Initialized at directory '{SAVE_DIR}'"
     )
 
     # Connection key prompt
-    connectionkey = Prompt.ask("[bold green][SERVER][/] : Enter Connection Key ")
-
-    try:
-        SERVER, PORT = tuple(keybreaker(connectionkey).split(":"))
-    except ValueError:
+    connectionkey = Prompt.ask(
+        f"[bold green][{constants.success}][/] : Enter Connection Key "
+    )
+    
+    if validate_key(connectionkey) is True: 
         print(
-            f"\n[bold red]Invalid Connection key {connectionkey}. Please check if your connection key is valid.[/]"
+            f"[bold green][{constants.success}][/] : Set server ip to {keybreaker(connectionkey)}"
         )
-        exit()
+    else:
+        print(
+            f"[bold red][{constants.error}][/] : Invalid Connection Key"
+        )
+        sys.exit(constants.exit)
+
+    
+    SERVER, PORT = tuple(keybreaker(connectionkey).split(":"))
+
 
     print(
-        "[bold green][SERVER][/] : Set server ip to {}".format(
-            keybreaker(connectionkey)
-        )
+        f"[bold green][{constants.success}][/] : Set server ip to {keybreaker(connectionkey)}"
     )
 
     # Prompts for file path
-    filename = Prompt.ask("[bold green][SERVER][/] : Filename")
+    filename = Prompt.ask(f"[bold green][{constants.success}][/] : Filename")
 
     # Send function.
     send_file(filename, SERVER, PORT)
 
     # Prints success message
-    print("[bold green][SERVER][/] : Got file path successfully.")
+    print(f"[bold green][{constants.success}][/] : Got file path successfully.")
     print(
-        f"[bold green][SERVER][/] : Sending [bold yellow]{filename}[/] to {SERVER}:{PORT}"
+        f"[bold green][{constants.success}][/] : Sending [bold yellow]{filename}[/] to {SERVER}:{PORT}"
     )
-    print(f"[bold green][SERVER][/] : Sent file. :)")
+    print(f"[bold green][{constants.success}][/] : Sent file. :)")
 except KeyboardInterrupt:
     # KeyboardInterrupt Error Handling
-    print("\n[bold red]KeyboardInterrupt :([/]")
+    print(f"\n\n[bold red][{constants.error}]: KeyboardInterrupt :( [/]")
     exit()
 except ConnectionRefusedError:
     # ConnectionRefusedError Error Handling
-    print(f"\n[bold red]Connection Refused. Please check the server program.[/]")
+    print(
+        f"\n\n[bold red][{constants.error}]: Connection Refused. Please check the server program.[/]"
+    )
     exit()
 except FileNotFoundError:
     # FileNotFoundError Error Handling
     print(
-        f"\n[bold red]File '{filename}' does not exist. Please correct the file path and try again[/]"
+        f"\n\n[bold red][{constants.error}]: File '{filename}' does not exist. Please correct the file path and try again[/]"
     )
     exit()
