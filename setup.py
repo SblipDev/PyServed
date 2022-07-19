@@ -17,6 +17,5 @@ setup(
     packages=["pyserved"],
     install_requires=["rich", "choam"],
     include_package_data=True,
-    scripts=["pyserved/bin/pdlisten",
-            "pyserved/bin/pdsnd", "pyserved/bin/pdhost"],
+    scripts=["pyserved/bin/pdlisten", "pyserved/bin/pdsnd", "pyserved/bin/pdhost"],
 )
