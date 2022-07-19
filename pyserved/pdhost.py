@@ -22,6 +22,7 @@ import socketserver
 from rich import print
 import socket
 import sys
+import constants
 
 # Function to get internal ip address
 
@@ -59,12 +60,12 @@ handler = http.server.SimpleHTTPRequestHandler
 try:
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), handler) as httpd:
-        print(f"[bold green][SERVER]:[/] started at {HOST}:" + str(PORT))
+        print(f"[bold green][{constants.success}]:[/] started at {HOST}:" + str(PORT))
         httpd.serve_forever()
 except KeyboardInterrupt:
-    print("\n[bold red]KeyboardInterrupt[/]")
+    print(f"\n[bold red][{constants.error}]: KeyboardInterrupt[/]")
     exit()
 except OSError:
     print(
-        "\n[bold red]OSError: [Error 98] Address already in use.If not, please try again in a few seconds. If error message persists, please use the -port argument to set a new port.[/]"
+        f"\n[bold red][{constants.error}]: OSError: [Error 98] Address already in use.If not, please try again in a few seconds. If error message persists, please use the -port argument to set a new port.[/]"
     )
