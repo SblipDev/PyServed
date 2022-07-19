@@ -11,7 +11,7 @@ _____        _____                         _
 Shaurya Pratap Singh 2021
 """
 
-__version__ = "2.0.8"
+__version__ = "2.2"
 __author__ = "SblipDev"
 __github__ = "https://github.com/SblipDev/PyServed"
 __logo__ = """
