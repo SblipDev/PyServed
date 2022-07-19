@@ -3,9 +3,9 @@
 """
 deepthought@42 ~ $ pdlisten
 
-[SERVER]: Server is listening on 192.168.1.58:8080
-[SERVER]: Connection Key: 192@168@1@58+8080
-[SERVER]: Waiting for a connection for files...
+[{constants.success}]: Server is listening on 192.168.1.58:8080
+[{constants.success}]: Connection Key: 192@168@1@58+8080
+[{constants.success}]: Waiting for a connection for files...
 
 This program is used to listen for incoming connections from the 
 pdsnd.py program. If it recieves a connection, it will write the
@@ -31,7 +31,7 @@ import sys
 import socket
 import readline
 import os
-
+import constants
 from rich import print
 
 # Decodes the key
@@ -144,7 +144,7 @@ except IndexError:
 # End program with message informing that port is in use
 if is_port_in_use() is True:
     print(
-        "[bold red]Port 8080 is already in use in your network. Choose another port instead using the '-port' parameter.[/]"
+        f"[bold red][{constants.error}]: Port 8080 is already in use in your network. Choose another port instead using the '-port' parameter.[/]"
     )
     exit()
 
@@ -153,50 +153,48 @@ if is_port_in_use() is True:
 try:
     client = Client(SERVER, PORT)
 
-    print("[bold green][SERVER]:[/] Server is listening on {}:{}".format(SERVER, PORT))
     print(
-        "[bold green][SERVER]:[/] Connection Key: {}".format(
-            keymaker(str(SERVER + ":" + str(PORT)))
-        )
+        f"[bold green][{constants.success}]:[/] Server is listening on {SERVER}:{PORT}"
     )
-    print("[bold green][SERVER]:[/] Waiting for a connection for files...")
+    print(
+        f"[bold green][{constants.success}]:[/] Connection Key: {keymaker(str(SERVER + ':' + str(PORT)))}"
+    )
+    print(
+        f"[bold green][{constants.success}]:[/] Waiting for a connection for files..."
+    )
 
     client.listen()
     _, address = client.accept()
 
     print(
-        "[bold green][SERVER]:[/] Connection from {}:{} accepted.".format(
-            address[0], address[1]
-        )
+        f"[bold green][{constants.success}]:[/] Connection from {address[0]}:{address[1]} accepted."
     )
-    print("[bold green][SERVER]:[/] Reading file data.....")
+    print(f"[bold green][{constants.success}]:[/] Reading file data.....")
 
     try:
         client.receive()
     except ValueError as e:
         print(
-            f"{repr(e)} \n\n [bold red]An error occured. Please try again in few seconds....[/]"
+            f"{repr(e)} \n\n [bold red][{constants.error}]: An error occured. Please try again in few seconds....[/]"
         )
         exit()
 
     print(
-        "[bold green][SERVER]:[/] Received file '[bold yellow]{}[/]', saving to current directory.".format(
-            client.filename
-        )
+        f"[bold green][{constants.success}]:[/] Received file '[bold yellow]{client.filename}[/]', saving to current directory."
     )
     client.write()
 
     print(
-        "[bold green][SERVER]:[/] File transferred successfully. Closing connection..."
+        "[bold green][{constants.success}]:[/] File transferred successfully. Closing connection..."
     )
     client.close()
 
 except KeyboardInterrupt:
-    print("\n[bold red]KeyboardInterrupt[/]")
+    print(f"\n\n[bold red][{constants.error}]: KeyboardInterrupt[/]")
     exit()
 
 except Exception as e:
     print(
-        f"\n[bold red] {repr(e)} \n\n If the problem persists, contact the owner of the package at https://github.com/SblipDev/pyserved[/] \n"
+        f"\n\n[bold red][{constants.error}]: {repr(e)} \n\n If the problem persists, contact the owner of the package at https://github.com/SblipDev/pyserved[/] \n"
     )
     exit()
