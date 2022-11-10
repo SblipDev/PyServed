@@ -54,14 +54,14 @@ class Client:
         self.SERVER_PORT = port
         # CHANGE STUFF HERE
 
-        self.BUFFER_SIZE = 1024 * 100000
-        self.SEPARATOR = "<py42/>"
+        self.BUFFER_SIZE = 4096
+        self.SEPARATOR = "<pyserved21>"
         self.s = socket.socket()
         self.s.bind((self.SERVER_HOST, self.SERVER_PORT))
 
     def listen(self):
         # Listen for incoming connections
-        self.s.listen(5)
+        self.s.listen(10)
 
     def accept(self):
         # Accept incoming connections from client
@@ -75,7 +75,7 @@ class Client:
         received = self.client_socket.recv(self.BUFFER_SIZE).decode()
         filename, filesize = received.split(self.SEPARATOR)
         self.filename = os.path.basename(filename)
-        self.filesize = filesize
+        self.filesize = int(filesize)
         return self.filename, self.filesize
 
     def write(self):
